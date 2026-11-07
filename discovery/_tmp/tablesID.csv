@@ -1,0 +1,11 @@
+LastID,TableName,SourceTab,ID
+11,Discounts,NULL,5
+143,DocumentsDef,NULL,1
+266447,JurnalTrans,NULL,10
+676048,JurnalTransMoves,NULL,9
+24815,PriceLists,NULL,4
+3409,specialprices,NULL,3
+3393,specialpricesmoves,NULL,2
+195729,Stock,NULL,7
+874954,StockMoves,NULL,8
+710,varieties,NULL,6

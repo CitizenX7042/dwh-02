@@ -1,0 +1,13 @@
+OperationTable,OperationType,OperationCount,FirstOperationID,LastOperationRowID,MaxBusinessObjectID
+DocumentsDef,Insert,80005,2805824,12148836,131
+JurnalTrans,Delete,1,651680,651680,265974
+JurnalTrans,Insert,281777,1871911,2206579,314837
+JurnalTransMoves,Delete,2,651678,651679,674878
+JurnalTransMoves,Insert,3310788,651311,12143674,1181237
+PriceLists,Delete,453,2807713,2820536,25368
+PriceLists,Insert,142,2806803,8801426,25457
+specialprices,Insert,9,3443055,8757090,5019
+Stock,Delete,26,653215,8803144,195656
+Stock,Insert,268606,915659,12145658,374473
+StockMoves,Delete,390,651342,671500,874787
+StockMoves,Insert,1216544,1788876,12145659,1802011

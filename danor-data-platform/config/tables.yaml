@@ -1,0 +1,121 @@
+# Table load configuration for the first portable ETL PoC.
+# Credentials must never appear in this file.
+
+defaults:
+  load_mode: full_replace
+  source_schema: dbo
+  target_schema: stage
+
+tables:
+  DocumentsDef:
+    description: Document-type classification dictionary
+    source_schema: dbo
+    source_table: DocumentsDef
+    target_schema: stage
+    target_table: DocumentsDef
+    query_file: sql/source/DocumentsDef.sql
+    business_key: [DocumentID]
+    load_mode: full_replace
+    source_columns:
+      - DocumentID
+      - DocName
+      - SalesDoc
+      - ForseenOrder
+      - StockUpdate
+      - UpdatFJurnal
+      - StockInOut
+    target_columns:
+      - DocumentID
+      - DocName
+      - SalesDoc
+      - ForseenOrder
+      - StockUpdate
+      - UpdatFJurnal
+      - StockInOut
+      - SourceSystem
+      - ExtractedAtUtc
+      - EtlRunId
+    default_max_rows: null
+
+  Items:
+    description: Item catalog (pricing-relevant subset)
+    source_schema: dbo
+    source_table: Items
+    target_schema: stage
+    target_table: Items
+    query_file: sql/source/Items.sql
+    business_key: [ItemKey]
+    load_mode: full_replace
+    source_columns:
+      - ID
+      - ItemKey
+      - ItemName
+      - ForignName
+      - BarCode
+      - Price
+      - PurchPrice
+      - Currency
+      - DiscountCode
+      - SortGroup
+      - Quantity
+      - Dumi
+    target_columns:
+      - ID
+      - ItemKey
+      - ItemName
+      - ForignName
+      - BarCode
+      - Price
+      - PurchPrice
+      - Currency
+      - DiscountCode
+      - SortGroup
+      - Quantity
+      - Dumi
+      - SourceSystem
+      - ExtractedAtUtc
+      - EtlRunId
+    default_max_rows: null
+
+  Accounts:
+    description: Account cards without PII contact fields
+    source_schema: dbo
+    source_table: Accounts
+    target_schema: stage
+    target_table: Accounts
+    query_file: sql/source/Accounts.sql
+    business_key: [AccountKey]
+    load_mode: full_replace
+    source_columns:
+      - ID
+      - AccountKey
+      - FullName
+      - MainAccount
+      - BalanceCode
+      - Filter
+      - Agent
+      - CreditTermsCode
+      - DiscountCode
+      - DocCurr
+      - AssignKey
+    target_columns:
+      - ID
+      - AccountKey
+      - FullName
+      - MainAccount
+      - BalanceCode
+      - Filter
+      - Agent
+      - CreditTermsCode
+      - DiscountCode
+      - DocCurr
+      - AssignKey
+      - SourceSystem
+      - ExtractedAtUtc
+      - EtlRunId
+    default_max_rows: null
+
+reference_group:
+  - DocumentsDef
+  - Items
+  - Accounts
